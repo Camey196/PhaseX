@@ -29,6 +29,12 @@
       position: relative;
     }
 
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Logo */
     .hero h1 {
       font-size: 6rem;
       margin-bottom: 20px;
@@ -37,6 +43,7 @@
       animation: logoFadeIn 1s forwards;
     }
 
+    /* Tagline */
     .hero p {
       font-size: 2rem;
       margin-bottom: 40px;
@@ -47,6 +54,7 @@
       animation-delay: 0.8s;
     }
 
+    /* CTA button */
     .cta {
       display: inline-block;
       padding: 20px 50px;
@@ -107,9 +115,11 @@
 
   <!-- Hero -->
   <div class="hero">
-    <h1 class="graffiti-logo">PhaseX</h1>
-    <p>The best kits at the best Prices</p>
-    <a href="#" class="cta">View Products</a>
+    <div class="hero-content">
+      <h1 class="graffiti-logo">PhaseX</h1>
+      <p>The best kits at the best Prices.</p>
+      <a href="#" class="cta">View Products</a>
+    </div>
   </div>
 
   <script>
