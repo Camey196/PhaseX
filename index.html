@@ -1,97 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PhaseX</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhaseX</title>
 
-<link rel="icon" href="https://image2url.com/r2/default/images/1770324046050-f81b851b-d7dc-48c3-941d-0d58081577e6.jpg">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://image2url.com/r2/default/images/1770324046050-f81b851b-d7dc-48c3-941d-0d58081577e6.jpg">
 
-<link href="https://fonts.cdnfonts.com/css/graffiti-city" rel="stylesheet">
+  <!-- Graffiti City font -->
+  <link href="https://fonts.cdnfonts.com/css/graffiti-city" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#fff;color:#000}
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #fff; color: #000; overflow: hidden; height: 100vh; }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 40px;
-border-bottom:1px solid #ddd;
-}
+    /* Stars */
+    .stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .star {
+      position: absolute;
+      background: #000;
+      border-radius: 50%;
+      width: 2px; height: 2px;
+      opacity: 0.7;
+      animation: starMove linear infinite;
+    }
+    @keyframes starMove {
+      0% { transform: translateY(0); opacity: 0.7; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
 
-.logo{font-family:'Graffiti City';font-size:2.8rem}
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
 
-nav a{
-margin-left:30px;
-font-weight:bold;
-text-decoration:none;
-color:#000;
-}
+    .hero h1 {
+      font-family: 'Graffiti City', sans-serif;
+      font-size: 6rem;
+      margin-bottom: 15px;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: logoFade 1s forwards;
+    }
 
-.hero{
-height:85vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
+    .hero p {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: taglineFade 1s forwards;
+      animation-delay: 0.6s;
+    }
 
-.hero h1{
-font-family:'Graffiti City';
-font-size:6rem;
-margin-bottom:15px;
-}
+    .cta {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 18px 55px;
+      border-radius: 12px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: buttonFade 1s forwards;
+      animation-delay: 1.2s;
+    }
 
-.hero p{
-font-size:1.8rem;
-margin-bottom:30px;
-}
+    .cta:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    }
 
-.hero a{
-padding:15px 50px;
-border:2px solid #000;
-text-decoration:none;
-font-weight:900;
-color:#000;
-}
+    @keyframes logoFade { to { opacity: 1; transform: scale(1); } }
+    @keyframes taglineFade { to { opacity: 1; transform: translateY(0); } }
+    @keyframes buttonFade { to { opacity: 1; transform: translateY(0); } }
 
-.hero a:hover{
-background:#000;
-color:#fff;
-}
-
-footer{
-text-align:center;
-padding:20px;
-border-top:1px solid #ddd;
-}
-</style>
+    @media(max-width:768px){
+      .hero h1 { font-size: 4rem; }
+      .hero p { font-size: 1.3rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-<div class="logo">PhaseX</div>
-<nav>
-<a href="catalog.html">Catalog</a>
-<a href="Accessories.html">Accessories</a>
-<a href="ConversionKits.html">Conversion Kits</a>
-<a href="Batterys.html">Batteries</a>
-</nav>
-</header>
+  <!-- Stars -->
+  <div class="stars"></div>
 
-<div class="hero">
-<h1>PhaseX</h1>
-<p>High performance electric bike upgrades</p>
-<a href="catalog.html">Shop Now</a>
-</div>
+  <!-- Hero -->
+  <div class="hero">
+    <div>
+      <h1>PhaseX</h1>
+      <p>The best kits at the best prices.</p>
+      <a href="catalog.html" class="cta">View Products</a>
+    </div>
+  </div>
 
-<footer>
-© 2026 PhaseX
-</footer>
+  <script>
+    const starCount = 70;
+    const stars = document.querySelector('.stars');
+
+    for (let i = 0; i < starCount; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.top = Math.random() * 100 + 'vh';
+      s.style.animationDuration = (Math.random() * 6 + 6) + 's';
+      stars.appendChild(s);
+    }
+  </script>
 
 </body>
 </html>
