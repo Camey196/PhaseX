@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhaseX | Accessories</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://image2url.com/r2/default/images/1770324046050-f81b851b-d7dc-48c3-941d-0d58081577e6.jpg">
+
+  <!-- Snipcart -->
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
+  <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
+  <div hidden id="snipcart" data-api-key="MWQ2MTI1Y2EtOGU0OC00MGQ5LWE4MzMtOGU0MTQ3OGEzNDQ2NjM5MDU5NjEzNDgwMjUwOTc2"></div>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+    body{background:#fff;color:#000}
+
+    header{
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #ddd;
+    }
+
+    .logo{font-size:2.3rem;font-weight:900}
+
+    nav a{
+      margin-left:25px;
+      text-decoration:none;
+      font-weight:bold;
+      color:#000;
+    }
+
+    .hero{
+      height:50vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+    }
+
+    .hero h1{font-size:4rem;margin-bottom:10px}
+    .hero p{font-size:1.4rem;color:#444}
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+      gap:25px;
+      padding:40px;
+    }
+
+    .product{
+      cursor:pointer;
+      transition:0.25s;
+      text-align:center;
+    }
+
+    .product:hover{transform:scale(1.04)}
+
+    .product img{
+      width:100%;
+      height:260px;
+      object-fit:contain;
+      background:#fff;
+      border-radius:10px;
+    }
+
+    .product-name{
+      margin-top:10px;
+      font-weight:700;
+      font-size:1.05rem;
+    }
+
+    .product-price{
+      margin-top:4px;
+      font-size:1.1rem;
+      font-weight:900;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      border-top:1px solid #ddd;
+      margin-top:40px;
+      color:#777;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">PhaseX</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="catalog.html">Catalog</a>
+    <a href="Accessories.html">Accessories</a>
+    <button class="snipcart-checkout">🛒 Cart (<span class="snipcart-items-count">0</span>)</button>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Accessories</h1>
+  <p>Upgrade your ride</p>
+</div>
+
+<div class="products">
+
+  <!-- Product -->
+  <button class="product snipcart-add-item"
+    data-item-id="250w-sticker"
+    data-item-name="250w Sticker"
+    data-item-price="0"
+    data-item-image="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTex6nftzLbdreKo3j1DmiBT2K7947g0WQzFFLRTVtWB5cSUVMSyKIO7PWB8_ooAtH41F0AYHvcpDptP8C91xJwM3NAh6V9OxyULb1U4-BiGsDvz9azToU8Zv9fHCRExR8P2PZBwQ&usqp=CAc"
+    data-item-url="/">
+    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTex6nftzLbdreKo3j1DmiBT2K7947g0WQzFFLRTVtWB5cSUVMSyKIO7PWB8_ooAtH41F0AYHvcpDptP8C91xJwM3NAh6V9OxyULb1U4-BiGsDvz9azToU8Zv9fHCRExR8P2PZBwQ&usqp=CAc">
+    <div class="product-name">250w Sticker</div>
+    <div class="product-price">£0</div>
+  </button>
+
+  <!-- Copy blocks like this for every product -->
+
+  <button class="product snipcart-add-item"
+    data-item-id="mudguard"
+    data-item-name="Mudguard"
+    data-item-price="0"
+    data-item-image="https://m.media-amazon.com/images/I/71SBaZq8+0L._AC_SY300_SX300_QL70_ML2_.jpg"
+    data-item-url="/">
+    <img src="https://m.media-amazon.com/images/I/71SBaZq8+0L._AC_SY300_SX300_QL70_ML2_.jpg">
+    <div class="product-name">Mudguard</div>
+    <div class="product-price">£0</div>
+  </button>
+
+  <button class="product snipcart-add-item"
+    data-item-id="pegs"
+    data-item-name="Heavy Duty Pegs"
+    data-item-price="0"
+    data-item-image="https://emotoworx.com/cdn/shop/files/515JJrr_doL._AC_SL1278.jpg?v=1690838800"
+    data-item-url="/">
+    <img src="https://emotoworx.com/cdn/shop/files/515JJrr_doL._AC_SL1278.jpg?v=1690838800">
+    <div class="product-name">Heavy Duty Pegs</div>
+    <div class="product-price">£0</div>
+  </button>
+
+</div>
+
+<footer>
+  © 2026 PhaseX — All Rights Reserved
+</footer>
+
+</body>
+</html>
