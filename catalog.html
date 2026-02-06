@@ -13,7 +13,7 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-    body { background-color: #fff; color: #000; min-height: 100vh; overflow: hidden; }
+    body { background-color: #fff; color: #000; min-height: 100vh; overflow-x: hidden; }
 
     /* Stars background */
     .stars {
@@ -53,6 +53,7 @@
     .logo {
       font-family: 'Graffiti City', sans-serif;
       font-size: 2.5rem;
+      cursor: pointer;
     }
     nav a {
       margin-left: 30px;
@@ -95,51 +96,33 @@
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
       text-align: center;
-      border: 2px solid transparent;
+      cursor: pointer;
     }
     .product-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      border: 2px solid #000;
       box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
     .product-card img {
       width: 200px;
       height: 200px;
       object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .product-card:hover img {
+      transform: scale(1.1) rotate(-1deg);
     }
     .product-card h3 {
       margin: 10px 0 5px 0;
       font-size: 1.2rem;
+      font-family: 'Graffiti City', sans-serif;
     }
     .product-card p {
       font-size: 0.95rem;
       color: #555;
       margin-bottom: 10px;
       padding: 0 5px;
-    }
-
-    .product-card .btn, .product-card .coming-soon {
-      display: inline-block;
-      margin-bottom: 15px;
-      padding: 10px 20px;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: transform 0.3s;
-      text-decoration: none;
-    }
-    .product-card .btn {
-      background-color: #000;
-      color: #fff;
-    }
-    .product-card .btn:hover { transform: scale(1.05); }
-
-    .product-card .coming-soon {
-      background-color: #555;
-      color: #fff;
-      cursor: default;
     }
 
     /* Footer */
@@ -167,10 +150,13 @@
 
   <!-- Header / Navbar -->
   <header>
-    <div class="logo">PhaseX</div>
+    <div class="logo" onclick="location.href='index.html'">PhaseX</div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="products.html">Catalog</a>
+      <a href="catalog.html">Catalog</a>
+      <a href="ConversionKits.html">Conversion Kits</a>
+      <a href="Batterys.html">Batteries</a>
+      <a href="Accessories.html">Accessories</a>
     </nav>
   </header>
 
@@ -178,33 +164,35 @@
   <div class="catalog">
     <div class="page-title">Catalog</div>
     <div class="products-container">
-      <div class="product-card">
+      
+      <!-- Conversion Kits -->
+      <div class="product-card" onclick="location.href='ConversionKits.html'">
         <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf09df1506d514fc68b70a1d500d90cfcR.jpg_480x480q75.jpg_.avif" alt="Conversion Kits">
         <h3>Conversion Kits</h3>
-        <p>1kw 1.5kw 2kw 3kw 4kw 5kw</p>
-        <a href="#" class="btn">View</a>
+        <p>1kw · 1.5kw · 2kw · 3kw · 4kw · 5kw</p>
       </div>
 
-      <div class="product-card">
+      <!-- Batterys -->
+      <div class="product-card" onclick="location.href='Batterys.html'">
         <img src="https://s.alicdn.com/@sc04/kf/H71cba298cfe04ff09da15f41ab4b92d8w.jpg_720x720q50.jpg" alt="Batterys">
         <h3>Batterys</h3>
-        <p>48v 52v 60v 72v</p>
-        <a href="#" class="btn">View</a>
+        <p>48v · 52v · 60v · 72v</p>
       </div>
 
-      <div class="product-card">
+      <!-- Accessories -->
+      <div class="product-card" onclick="location.href='Accessories.html'">
         <img src="https://image2url.com/r2/default/images/1770323553111-64aeef01-25a8-403f-8f79-feb2b8a53741.png" alt="Accessories">
         <h3>Accessories</h3>
         <p>Lights, throttles, displays & more.</p>
-        <a href="#" class="btn">View</a>
       </div>
 
-      <div class="product-card">
-        <img src="https://sc02.alicdn.com/kf/A08bb853e22194366bb53e8e27cc29ef18.png" alt="Clothes">
-        <h3>Clothes</h3>
+      <!-- Coming Soon -->
+      <div class="product-card" onclick="alert('Coming Soon!')">
+        <img src="https://sc02.alicdn.com/kf/A08bb853e22194366bb53e8e27cc29ef18.png" alt="Clothing">
+        <h3>Clothing</h3>
         <p>Coming Soon</p>
-        <div class="coming-soon">Coming Soon</div>
       </div>
+
     </div>
   </div>
 
