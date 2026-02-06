@@ -5,60 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Catalog | PhaseX</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     font-family:'Montserrat',sans-serif;
-    background:white;
+    background:#fff;
     color:#111;
     overflow-x:hidden;
 }
 
-/* STAR BACKGROUND */
+/* STARS */
 .stars{
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    inset:0;
     background:url("https://raw.githubusercontent.com/KnightOS/starfield/master/starfield.png");
-    opacity:0.15;
+    opacity:.18;
     z-index:-1;
 }
 
 /* HERO */
 .hero{
-    min-height:55vh;
+    min-height:75vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
+    padding:0 20px;
 }
 
 .hero h1{
-    font-size:3.5rem;
-    letter-spacing:3px;
-    font-weight:700;
-    animation:fadeUp 1s ease forwards;
+    font-size:5rem;
+    font-weight:900;
+    letter-spacing:5px;
+    animation:fadeUp .8s ease forwards;
 }
 
 .hero p{
-    margin-top:12px;
-    font-size:1.1rem;
-    opacity:.75;
-    animation:fadeUp 1.4s ease forwards;
+    margin-top:18px;
+    font-size:1.25rem;
+    opacity:.8;
+    animation:fadeUp 1.2s ease forwards;
 }
 
 @keyframes fadeUp{
-    from{opacity:0; transform:translateY(25px);}
+    from{opacity:0; transform:translateY(40px);}
     to{opacity:1; transform:translateY(0);}
 }
 
@@ -66,66 +60,79 @@ body{
 .catalog{
     max-width:1200px;
     margin:auto;
-    padding:80px 20px 40px;
+    padding:80px 20px 120px;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:50px;
+    gap:70px;
 }
 
 /* ITEM */
 .item{
     text-align:center;
-    transition:.4s;
     cursor:pointer;
+    transition:.4s ease;
 }
 
 .item img{
-    width:240px;
-    height:240px;
+    width:250px;
+    height:250px;
     object-fit:contain;
-    transition:.4s;
+    transition:.5s cubic-bezier(.25,.8,.25,1);
 }
 
 .item h3{
-    margin-top:18px;
-    font-size:1.3rem;
+    margin-top:20px;
+    font-size:1.6rem;
+    font-weight:700;
     letter-spacing:1px;
 }
 
 .item p{
-    margin-top:6px;
-    font-size:.95rem;
-    opacity:.75;
+    margin-top:8px;
+    font-size:1rem;
+    opacity:.7;
 }
 
+/* HOVER */
 .item:hover img{
-    transform:scale(1.12);
+    transform:scale(1.18) rotate(-1deg);
+}
+
+.item:hover{
+    transform:translateY(-12px);
 }
 
 /* COMING SOON */
 .coming{
     grid-column:1/-1;
     text-align:center;
-    margin-top:40px;
+    margin-top:80px;
 }
 
 .coming img{
-    width:280px;
-    transition:.4s;
+    width:300px;
+    transition:.6s cubic-bezier(.25,.8,.25,1);
 }
 
 .coming h3{
-    margin-top:15px;
-    font-size:1.4rem;
+    margin-top:20px;
+    font-size:1.8rem;
+    font-weight:800;
 }
 
 .coming p{
-    opacity:.7;
-    margin-top:6px;
+    margin-top:10px;
+    opacity:.65;
 }
 
 .coming:hover img{
-    transform:scale(1.15);
+    transform:scale(1.25) rotate(1deg);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .hero h1{font-size:3.2rem;}
+    .hero p{font-size:1rem;}
 }
 </style>
 </head>
@@ -136,7 +143,7 @@ body{
 
 <section class="hero">
     <h1>CATALOG</h1>
-    <p>Electric Bike Conversions & Premium Accessories</p>
+    <p>High-Performance Ebike Parts & Conversion Systems</p>
 </section>
 
 <section class="catalog">
