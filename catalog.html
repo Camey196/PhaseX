@@ -3,197 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catalog | E-Moto Store</title>
+<title>Catalog | PhaseX</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    background: linear-gradient(135deg,#0f0f0f,#151515);
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
+body{
+    font-family:'Montserrat',sans-serif;
+    background:white;
+    color:#111;
+    overflow-x:hidden;
 }
 
-header {
-    height: 55vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(circle at center,#1f1f1f,#000);
-    text-align: center;
+/* STAR BACKGROUND */
+.stars{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url("https://raw.githubusercontent.com/KnightOS/starfield/master/starfield.png");
+    opacity:0.15;
+    z-index:-1;
 }
 
-header h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 4rem;
-    letter-spacing: 4px;
-    animation: glow 2s infinite alternate;
+/* HERO */
+.hero{
+    min-height:55vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
 
-header p {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    opacity: 0.8;
+.hero h1{
+    font-size:3.5rem;
+    letter-spacing:3px;
+    font-weight:700;
+    animation:fadeUp 1s ease forwards;
 }
 
-@keyframes glow {
-    from { text-shadow: 0 0 10px #0ff; }
-    to { text-shadow: 0 0 25px #0ff; }
+.hero p{
+    margin-top:12px;
+    font-size:1.1rem;
+    opacity:.75;
+    animation:fadeUp 1.4s ease forwards;
 }
 
-.catalog {
-    max-width: 1300px;
-    margin: auto;
-    padding: 80px 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap: 30px;
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(25px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
-.card {
-    background: rgba(255,255,255,0.04);
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    transition: 0.35s;
-    backdrop-filter: blur(6px);
+/* GRID */
+.catalog{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px 40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:50px;
 }
 
-.card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 50px rgba(0,255,255,0.15);
+/* ITEM */
+.item{
+    text-align:center;
+    transition:.4s;
+    cursor:pointer;
 }
 
-.card img {
-    width: 100%;
-    height: 260px;
-    object-fit: contain;
-    background: #0a0a0a;
-    padding: 20px;
+.item img{
+    width:240px;
+    height:240px;
+    object-fit:contain;
+    transition:.4s;
 }
 
-.card-content {
-    padding: 18px;
-    text-align: center;
+.item h3{
+    margin-top:18px;
+    font-size:1.3rem;
+    letter-spacing:1px;
 }
 
-.card-content h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.05rem;
-    letter-spacing: 1px;
+.item p{
+    margin-top:6px;
+    font-size:.95rem;
+    opacity:.75;
 }
 
-.stars {
-    margin: 8px 0;
-    color: gold;
+.item:hover img{
+    transform:scale(1.12);
 }
 
-.price {
-    margin-top: 10px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #00ffff;
+/* COMING SOON */
+.coming{
+    grid-column:1/-1;
+    text-align:center;
+    margin-top:40px;
 }
 
-.tag {
-    position: absolute;
-    top: 15px;
-    right: -35px;
-    background: cyan;
-    color: black;
-    padding: 5px 40px;
-    font-weight: bold;
-    transform: rotate(45deg);
-    font-size: 0.7rem;
+.coming img{
+    width:280px;
+    transition:.4s;
 }
 
-footer {
-    text-align: center;
-    padding: 30px;
-    opacity: 0.6;
-    font-size: 0.9rem;
+.coming h3{
+    margin-top:15px;
+    font-size:1.4rem;
+}
+
+.coming p{
+    opacity:.7;
+    margin-top:6px;
+}
+
+.coming:hover img{
+    transform:scale(1.15);
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>PRODUCT CATALOG</h1>
-    <p>Premium E-Bike Parts · Kits · Accessories</p>
-</header>
+<div class="stars"></div>
+
+<section class="hero">
+    <h1>CATALOG</h1>
+    <p>Electric Bike Conversions & Premium Accessories</p>
+</section>
 
 <section class="catalog">
 
-<div class="card">
-    <div class="tag">HOT</div>
-    <img src="https://sc02.alicdn.com/kf/A08bb853e22194366bb53e8e27cc29ef18.png">
-    <div class="card-content">
+    <div class="item" onclick="location.href='ConversionKits.html'">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf09df1506d514fc68b70a1d500d90cfcR.jpg_480x480q75.jpg_.avif">
         <h3>Conversion Kits</h3>
-        <div class="stars">★★★★★</div>
-        <div class="price">£0</div>
+        <p>1kw · 1.5kw · 2kw · 3kw · 4kw · 5kw</p>
     </div>
-</div>
 
-<div class="card">
-    <img src="https://image2url.com/r2/default/images/1770323553111-64aeef01-25a8-403f-8f79-feb2b8a53741.png">
-    <div class="card-content">
+    <div class="item" onclick="location.href='Batterys.html'">
+        <img src="https://s.alicdn.com/@sc04/kf/H71cba298cfe04ff09da15f41ab4b92d8w.jpg_720x720q50.jpg">
+        <h3>Batterys</h3>
+        <p>48v · 52v · 60v · 72v</p>
+    </div>
+
+    <div class="item" onclick="location.href='Accessories.html'">
+        <img src="https://image2url.com/r2/default/images/1770323553111-64aeef01-25a8-403f-8f79-feb2b8a53741.png">
         <h3>Accessories</h3>
-        <div class="stars">★★★★★</div>
-        <div class="price">£0</div>
+        <p>Parts · Styling · Upgrades</p>
     </div>
-</div>
 
-<div class="card">
-    <div class="tag">POWER</div>
-    <img src="https://image2url.com/r2/default/images/1770323170806-2b1ffde9-ecbd-4de4-87dd-605e8d3aad56.png">
-    <div class="card-content">
-        <h3>Battery Packs</h3>
-        <div class="stars">★★★★★</div>
-        <div class="price">£0</div>
+    <div class="coming">
+        <img src="https://sc02.alicdn.com/kf/A08bb853e22194366bb53e8e27cc29ef18.png">
+        <h3>Clothing</h3>
+        <p>Coming Soon</p>
     </div>
-</div>
-
-<div class="card">
-    <img src="https://m.media-amazon.com/images/I/61ot1fLL3TL._AC_UF894,1000_QL80_.jpg">
-    <div class="card-content">
-        <h3>Digital Displays</h3>
-        <div class="stars">★★★★☆</div>
-        <div class="price">£0</div>
-    </div>
-</div>
-
-<div class="card">
-    <img src="https://m.media-amazon.com/images/I/71SBaZq8+0L._AC_SY300_SX300_QL70_ML2_.jpg">
-    <div class="card-content">
-        <h3>Mud Guards</h3>
-        <div class="stars">★★★★★</div>
-        <div class="price">£0</div>
-    </div>
-</div>
-
-<div class="card">
-    <img src="https://dirtbikexpress.twic.pics/16740/0-pro-taper-contour-handlebar-black-pro-taper-handlebars-dirtbikexpress.jpg">
-    <div class="card-content">
-        <h3>Pro Taper Bars</h3>
-        <div class="stars">★★★★★</div>
-        <div class="price">£0</div>
-    </div>
-</div>
 
 </section>
-
-<footer>
-    © 2026 · E-Moto Store · Built Different ⚡
-</footer>
 
 </body>
 </html>
