@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Catalog | PhaseX</title>
 
+<!-- Graffiti City Font -->
+<link href="https://fonts.cdnfonts.com/css/graffiti-city" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
@@ -26,9 +28,35 @@ body{
     z-index:-1;
 }
 
+/* NAV */
+header{
+    width:100%;
+    padding:25px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-family:'Graffiti City',sans-serif;
+    font-size:2.6rem;
+}
+
+nav a{
+    margin-left:35px;
+    text-decoration:none;
+    font-weight:600;
+    color:#111;
+    transition:.3s;
+}
+
+nav a:hover{
+    opacity:.5;
+}
+
 /* HERO */
 .hero{
-    min-height:75vh;
+    min-height:65vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -38,39 +66,39 @@ body{
 }
 
 .hero h1{
-    font-size:5rem;
-    font-weight:900;
-    letter-spacing:5px;
-    animation:fadeUp .8s ease forwards;
+    font-family:'Graffiti City',sans-serif;
+    font-size:6rem;
+    letter-spacing:6px;
+    animation:fadeUp .9s ease forwards;
 }
 
 .hero p{
-    margin-top:18px;
-    font-size:1.25rem;
+    margin-top:20px;
+    font-size:1.4rem;
     opacity:.8;
-    animation:fadeUp 1.2s ease forwards;
+    animation:fadeUp 1.3s ease forwards;
 }
 
 @keyframes fadeUp{
-    from{opacity:0; transform:translateY(40px);}
+    from{opacity:0; transform:translateY(50px);}
     to{opacity:1; transform:translateY(0);}
 }
 
 /* GRID */
 .catalog{
-    max-width:1200px;
+    max-width:1250px;
     margin:auto;
-    padding:80px 20px 120px;
+    padding:90px 20px 140px;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:70px;
+    gap:80px;
 }
 
 /* ITEM */
 .item{
     text-align:center;
     cursor:pointer;
-    transition:.4s ease;
+    transition:.4s cubic-bezier(.25,.8,.25,1);
 }
 
 .item img{
@@ -81,19 +109,18 @@ body{
 }
 
 .item h3{
-    margin-top:20px;
-    font-size:1.6rem;
-    font-weight:700;
+    margin-top:22px;
+    font-size:1.7rem;
+    font-weight:800;
     letter-spacing:1px;
 }
 
 .item p{
     margin-top:8px;
-    font-size:1rem;
-    opacity:.7;
+    font-size:1.05rem;
+    opacity:.65;
 }
 
-/* HOVER */
 .item:hover img{
     transform:scale(1.18) rotate(-1deg);
 }
@@ -102,37 +129,38 @@ body{
     transform:translateY(-12px);
 }
 
-/* COMING SOON */
+/* COMING */
 .coming{
     grid-column:1/-1;
     text-align:center;
-    margin-top:80px;
+    margin-top:100px;
 }
 
 .coming img{
-    width:300px;
+    width:320px;
     transition:.6s cubic-bezier(.25,.8,.25,1);
 }
 
 .coming h3{
-    margin-top:20px;
-    font-size:1.8rem;
-    font-weight:800;
+    margin-top:25px;
+    font-size:2rem;
+    font-weight:900;
 }
 
 .coming p{
     margin-top:10px;
-    opacity:.65;
+    opacity:.7;
 }
 
 .coming:hover img{
-    transform:scale(1.25) rotate(1deg);
+    transform:scale(1.28) rotate(1deg);
 }
 
 /* MOBILE */
 @media(max-width:768px){
-    .hero h1{font-size:3.2rem;}
-    .hero p{font-size:1rem;}
+    header{padding:20px;}
+    nav a{margin-left:15px;}
+    .hero h1{font-size:3.5rem;}
 }
 </style>
 </head>
@@ -141,9 +169,20 @@ body{
 
 <div class="stars"></div>
 
+<header>
+    <div class="logo">PhaseX</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="ConversionKits.html">Kits</a>
+        <a href="Batterys.html">Batteries</a>
+        <a href="Accessories.html">Accessories</a>
+    </nav>
+</header>
+
 <section class="hero">
     <h1>CATALOG</h1>
-    <p>High-Performance Ebike Parts & Conversion Systems</p>
+    <p>High-performance electric bike upgrades</p>
 </section>
 
 <section class="catalog">
