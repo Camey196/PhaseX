@@ -3,76 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PhaseX</title>
+  <title>PhaseX | Catalog</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://image2url.com/r2/default/images/1770323586697-399918b0-f99e-48ed-9b05-cc2fc24bfab8.png">
 
   <!-- Graffiti City font import -->
   <link href="https://fonts.cdnfonts.com/css/graffiti-city" rel="stylesheet">
 
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-    body { background-color: #fff; color: #000; overflow: hidden; height: 100vh; }
+    body { background-color: #fff; color: #000; min-height: 100vh; overflow: hidden; }
 
-    /* Graffiti logo font */
-    .graffiti-logo {
-      font-family: 'Graffiti City', sans-serif;
-    }
-
-    /* Center hero content */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      position: relative;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Logo */
-    .hero h1 {
-      font-size: 6rem;
-      margin-bottom: 20px;
-      opacity: 0;
-      transform: scale(0.8);
-      animation: logoFadeIn 1s forwards;
-    }
-
-    /* Tagline */
-    .hero p {
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: #333;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: taglineFadeIn 1s forwards;
-      animation-delay: 0.8s;
-    }
-
-    /* CTA button */
-    .cta {
-      display: inline-block;
-      padding: 20px 50px;
-      background-color: #000;
-      color: #fff;
-      font-size: 1.5rem;
-      font-weight: bold;
-      border-radius: 10px;
-      transition: transform 0.3s;
-      text-decoration: none;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: ctaFadeIn 1s forwards;
-      animation-delay: 1.5s;
-    }
-    .cta:hover { transform: scale(1.1); }
-
-    /* Stars layer */
+    /* Stars background */
     .stars {
       position: fixed;
       top: 0;
@@ -97,14 +40,123 @@
       100% { transform: translateY(100vh) translateX(50vw); opacity: 0; }
     }
 
-    @keyframes logoFadeIn { to { opacity: 1; transform: scale(1); } }
-    @keyframes taglineFadeIn { to { opacity: 1; transform: translateY(0); } }
-    @keyframes ctaFadeIn { to { opacity: 1; transform: translateY(0); } }
+    /* Header / Navbar */
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+      z-index: 1;
+    }
+    .logo {
+      font-family: 'Graffiti City', sans-serif;
+      font-size: 2.5rem;
+    }
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #555; }
+
+    /* Catalog container */
+    .catalog {
+      max-width: 1200px;
+      margin: 40px auto 60px auto;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Page Title */
+    .page-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      font-family: 'Graffiti City', sans-serif;
+    }
+
+    /* Products Grid */
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    /* Product Cards */
+    .product-card {
+      background-color: #f5f5f5;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+      text-align: center;
+      border: 2px solid transparent;
+    }
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      border: 2px solid #000;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    .product-card img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-card h3 {
+      margin: 10px 0 5px 0;
+      font-size: 1.2rem;
+    }
+    .product-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 10px;
+      padding: 0 5px;
+    }
+
+    .product-card .btn, .product-card .coming-soon {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: transform 0.3s;
+      text-decoration: none;
+    }
+    .product-card .btn {
+      background-color: #000;
+      color: #fff;
+    }
+    .product-card .btn:hover { transform: scale(1.05); }
+
+    .product-card .coming-soon {
+      background-color: #555;
+      color: #fff;
+      cursor: default;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #ddd;
+      position: relative;
+      z-index: 1;
+    }
 
     @media(max-width:768px){
-      .hero h1 { font-size: 4rem; }
-      .hero p { font-size: 1.5rem; }
-      .cta { font-size: 1.2rem; padding: 15px 40px; }
+      .products-container { flex-direction: column; align-items: center; }
+      header { flex-direction: column; gap: 15px; }
+      nav a { margin-left: 0; margin-right: 20px; }
     }
   </style>
 </head>
@@ -113,18 +165,55 @@
   <!-- Stars background -->
   <div class="stars"></div>
 
-  <!-- Hero -->
-  <div class="hero">
-    <div class="hero-content">
-      <h1 class="graffiti-logo">PhaseX</h1>
-      <p>The best kits at the best Prices.</p>
-      <!-- Updated button link -->
-      <a href="catalog.html" class="cta">View Products</a>
+  <!-- Header / Navbar -->
+  <header>
+    <div class="logo">PhaseX</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Catalog</a>
+    </nav>
+  </header>
+
+  <!-- Catalog -->
+  <div class="catalog">
+    <div class="page-title">Catalog</div>
+    <div class="products-container">
+      <div class="product-card">
+        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf09df1506d514fc68b70a1d500d90cfcR.jpg_480x480q75.jpg_.avif" alt="Conversion Kits">
+        <h3>Conversion Kits</h3>
+        <p>1kw 1.5kw 2kw 3kw 4kw 5kw</p>
+        <a href="#" class="btn">View</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://s.alicdn.com/@sc04/kf/H71cba298cfe04ff09da15f41ab4b92d8w.jpg_720x720q50.jpg" alt="Batterys">
+        <h3>Batterys</h3>
+        <p>48v 52v 60v 72v</p>
+        <a href="#" class="btn">View</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://image2url.com/r2/default/images/1770323553111-64aeef01-25a8-403f-8f79-feb2b8a53741.png" alt="Accessories">
+        <h3>Accessories</h3>
+        <p>Lights, throttles, displays & more.</p>
+        <a href="#" class="btn">View</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://sc02.alicdn.com/kf/A08bb853e22194366bb53e8e27cc29ef18.png" alt="Clothes">
+        <h3>Clothes</h3>
+        <p>Coming Soon</p>
+        <div class="coming-soon">Coming Soon</div>
+      </div>
     </div>
   </div>
 
+  <footer>
+    &copy; 2026 PhaseX. All rights reserved.
+  </footer>
+
+  <!-- Stars JS -->
   <script>
-    // Stars JS
     const starCount = 50;
     const starsContainer = document.querySelector('.stars');
     for(let i = 0; i < starCount; i++){
